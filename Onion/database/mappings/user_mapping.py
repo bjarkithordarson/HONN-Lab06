@@ -1,5 +1,5 @@
 from sqlalchemy import MetaData, Table, Column, Integer, String, Float, ForeignKey
-from models.user import User
+from core.entities.user import User
 from database.mappings.mapping import Mapping
 
 

@@ -1,12 +1,12 @@
 from injector import inject
 
-from database.repositories.movie_repository import MovieRepository
-from models.movie import Movie
+from core.interfaces.i_movie_repository import IMovieRepository
+from core.entities.movie import Movie
 
 
 class MovieService:
     @inject
-    def __init__(self, repository: MovieRepository):
+    def __init__(self, repository: IMovieRepository):
         self.__repository = repository
 
     def get_all(self) -> list[Movie]:

@@ -1,12 +1,13 @@
 from contextlib import AbstractContextManager
 from typing import Callable
 
+from core.interfaces.i_movie_repository import IMovieRepository
 from injector import inject
 from sqlalchemy.orm import Session
-from models.movie import Movie
+from core.entities.movie import Movie
 
 
-class MovieRepository:
+class MovieRepository(IMovieRepository):
     @inject
     def __init__(self, session_factory: Callable[..., AbstractContextManager[Session]]):
         self.__session_factory = session_factory

@@ -1,12 +1,13 @@
 from contextlib import AbstractContextManager
 from typing import Callable
 
+from core.interfaces.i_pricing_repository import IPricingRepository
 from injector import inject
 from sqlalchemy.orm import Session
-from models.pricing import Pricing
+from core.entities.pricing import Pricing
 
 
-class PricingRepository:
+class PricingRepository(IPricingRepository):
     @inject
     def __init__(self, session_factory: Callable[..., AbstractContextManager[Session]]):
         self.__session_factory = session_factory

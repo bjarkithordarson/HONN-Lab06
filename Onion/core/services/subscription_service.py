@@ -1,13 +1,13 @@
 from injector import inject
 
-from database.repositories.subscription_repository import SubscriptionRepository
-from models.subscription import Subscription
-from services.twilio_gateway_fake import TwilioGatewayFake
+from core.interfaces.i_subscription_repository import ISubscriptionRepository
+from core.entities.subscription import Subscription
+from core.services.twilio_gateway_fake import TwilioGatewayFake
 
 
 class SubscriptionService:
     @inject
-    def __init__(self, repository: SubscriptionRepository, sms_service: TwilioGatewayFake):
+    def __init__(self, repository: ISubscriptionRepository, sms_service: TwilioGatewayFake):
         self.__sms_service = sms_service
         self.__repository = repository
 

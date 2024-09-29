@@ -2,14 +2,15 @@ from contextlib import AbstractContextManager
 from re import sub
 from typing import Callable
 
+from core.interfaces.i_subscription_repository import ISubscriptionRepository
 from injector import inject
 from sqlalchemy.orm import Session,  joinedload
-from models.pricing import Pricing
-from models.subscription import Subscription
-from models.user import User
+from core.entities.pricing import Pricing
+from core.entities.subscription import Subscription
+from core.entities.user import User
 
 
-class SubscriptionRepository:
+class SubscriptionRepository(ISubscriptionRepository):
     @inject
     def __init__(self, session_factory: Callable[..., AbstractContextManager[Session]]):
         self.__session_factory = session_factory

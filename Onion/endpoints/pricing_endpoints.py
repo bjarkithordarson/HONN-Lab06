@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, status
 
 from infrastructure.get_service import get_service
-from services.pricing_service import PricingService
-from dtos.create_pricing_dto import CreatePricingDto
+from core.services.pricing_service import PricingService
+from core.dtos.create_pricing_dto import CreatePricingDto
 
-from models.pricing import Pricing
+from core.entities.pricing import Pricing
 
 router = APIRouter(
     prefix='/pricings',

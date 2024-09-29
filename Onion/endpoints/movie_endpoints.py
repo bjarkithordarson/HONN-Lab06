@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, status
-from dtos.create_movie_dto import CreateMovieDto
+from core.dtos.create_movie_dto import CreateMovieDto
 from infrastructure.get_service import get_service
 
-from models.movie import Movie
-from services.movie_service import MovieService
+from core.entities.movie import Movie
+from core.services.movie_service import MovieService
 
 router = APIRouter(
     prefix='/movies',
