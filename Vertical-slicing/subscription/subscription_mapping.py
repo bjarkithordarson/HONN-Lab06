@@ -1,8 +1,8 @@
 from sqlalchemy import MetaData, Table, Column, Integer, String, Float, ForeignKey, Date
-from models.pricing import Pricing
-from models.subscription import Subscription
-from models.user import User
-from database.mappings.mapping import Mapping
+from pricing.pricing import Pricing
+from subscription.subscription import Subscription
+from user.user import User
+from common.database.mappings.mapping import Mapping
 from sqlalchemy.orm import relationship
 
 

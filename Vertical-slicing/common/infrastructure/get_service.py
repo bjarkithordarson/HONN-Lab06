@@ -2,8 +2,8 @@ from typing import Type, TypeVar
 
 from injector import Injector
 
-from infrastructure.app_module import AppModule
-from infrastructure.settings import Settings
+from common.infrastructure.app_module import AppModule
+from common.infrastructure.settings import Settings
 
 settings = Settings("./.env")
 T = TypeVar('T')

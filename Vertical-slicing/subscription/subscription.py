@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from datetime import date
-from models.user import User
-from models.pricing import Pricing
+from user.user import User
+from pricing.pricing import Pricing
 
 
 @dataclass

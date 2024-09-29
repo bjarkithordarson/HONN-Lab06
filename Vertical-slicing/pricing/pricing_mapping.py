@@ -1,17 +1,16 @@
 from sqlalchemy import MetaData, Table, Column, Integer, String, Float, ForeignKey
-from models.movie import Movie
-from database.mappings.mapping import Mapping
+from pricing.pricing import Pricing
+from common.database.mappings.mapping import Mapping
 
 
-class MovieMapping(Mapping):
+class PricingMapping(Mapping):
     def create_table(self, metadata: MetaData) -> Table:
         return Table(
-            "movie",
+            "pricing",
             metadata,
             Column("id", Integer, primary_key=True),
             Column("name", String),
-            Column("description", String),
-            Column("imdb_url", String),
+            Column("price", Float),
         )
 
-    entity = Movie
+    entity = Pricing

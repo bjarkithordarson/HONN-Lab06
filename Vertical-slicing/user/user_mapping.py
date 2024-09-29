@@ -1,16 +1,17 @@
 from sqlalchemy import MetaData, Table, Column, Integer, String, Float, ForeignKey
-from models.pricing import Pricing
-from database.mappings.mapping import Mapping
+from user.user import User
+from common.database.mappings.mapping import Mapping
 
 
-class PricingMapping(Mapping):
+class UserMapping(Mapping):
     def create_table(self, metadata: MetaData) -> Table:
         return Table(
-            "pricing",
+            "user",
             metadata,
             Column("id", Integer, primary_key=True),
             Column("name", String),
-            Column("price", Float),
+            Column("email", String),
+            Column("phone_number", String)
         )
 
-    entity = Pricing
+    entity = User

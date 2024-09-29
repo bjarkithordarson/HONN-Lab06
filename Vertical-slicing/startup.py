@@ -1,5 +1,5 @@
 import uvicorn
-from infrastructure.application_factory import create_app
+from common.infrastructure.application_factory import create_app
 
 app = create_app()
 
